@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extension</title>
     <link rel="stylesheet" href="Chrome_Extension.css">
 </head>
+
 <body>
     <h1>Lead tracker</h1>
-    <input type="text" id="input-el">
-    <br>
-    <button id="input-btn">SAVE INPUT</button>
-    <button id="save-tab">SAVE TAB</button>
-    <button id="delete-btn">DELETE ALL</button>
+    <input type="text" id="input-el" placeholder="Enter URL or text to save...">
+    <div class="button-group">
+        <button id="input-btn">SAVE INPUT</button>
+        <button id="save-tab">SAVE TAB</button>
+        <button id="delete-btn">DELETE ALL</button>
+    </div>
     <ul id="ul-el">
     </ul>
     <p style="text-align: right;" id="owner">Tulsi gupta</p>
     <script src="Chrome_Extension.js"></script>
 </body>
+
 </html>

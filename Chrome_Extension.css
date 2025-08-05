@@ -1,66 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-/* *{
-    padding:0px;
-    margin:0px; 
-    box-sizing: border-box; 
-} */
-body{
-    margin:6px; 
-    font-family: "Dancing Script";
-    font-style: normal;
-    min-width: 200px;
-    background-color: rgb(0, 0, 0);
-    color:white;
-    border:1px solid red;
-    background-image: radial-gradient(rgb(160, 157, 157),black);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1{
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-width: 320px;
+    max-width: 400px;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
     text-align: center;
-    text-shadow: 2px 2px rgb(197, 9, 9);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
 }
-#input-el{
-    min-width:90vw;
-    min-height:20px;
-    border:2px solid green;
-    padding:5px;
+
+#input-el {
+    width: 100%;
+    height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
 }
-#input-btn{
-    background-color: rgb(45, 131, 45);
-    color:white;
-    border:none;
-    padding:5px;
-    margin-top:5px;
-} 
-#delete-btn{
-    background-color: white;
-    color:rgb(45, 131, 45);
-    border:1.5px solid rgb(45, 131, 45) ;
-    padding:5px;
-    margin-top:5px;
+
+#input-el::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
-#save-tab{
-    background-color: rgb(45, 131, 45);
-    color:white;
-    border:none;
-    padding:5px;
-    margin-top:5px;
+
+#input-el:focus {
+    outline: none;
+    border-color: #4ade80;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
 }
-ul{
-    padding-top:20px;
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
-ul li {
+
+#input-btn,
+#save-tab,
+#delete-btn {
+    flex: 1;
+    min-width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#input-btn,
+#save-tab {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+#input-btn:hover,
+#save-tab:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(74, 222, 128, 0.4);
+}
+
+#delete-btn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+#delete-btn:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+ul {
     list-style: none;
-    font-weight: bold;
-    margin:20px 20px;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
 }
-li a{
-    color:rgb(45, 131, 45);
-    font-size: 20px;
+
+ul::-webkit-scrollbar {
+    width: 6px;
 }
-#owner{
-    font-size:10px;
-    font-family: "Sigmar", serif;
+
+ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+li a {
+    color: #4ade80;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    word-break: break-all;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: #22c55e;
+    text-decoration: underline;
+}
+
+#owner {
+    text-align: right;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    font-family: "Great Vibes", cursive;
     font-weight: 400;
     font-style: normal;
-    
+    font-size:15px;
+    letter-spacing: 0.5px;
+}
+
+/* Animation for new items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul li {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 350px) {
+    body {
+        padding: 16px;
+        min-width: 280px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    #input-btn,
+    #save-tab,
+    #delete-btn {
+        width: 100%;
+    }
 }
